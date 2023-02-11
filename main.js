@@ -59,18 +59,18 @@ const createProject = (event) => {
 
   //get values from form
 
-  const id = document.querySelector("#id");
-  const name = document.querySelector("#projectName");
-  const description = document.querySelector("#projectDescription");
-  console.log(name);
-  console.log(name.value);
+  //const id = document.querySelector("#id");
+  //const name = document.querySelector("#projectName");
+  //const description = document.querySelector("#projectDescription");
+  //console.log(name);
+  //console.log(name.value);
 
   //create project object
 
   const addProject = {
     id: projects.length + 1,
-    name: document.querySelector("#projectName").value,
-    description: document.querySelector("#projectDescription").value,
+    projectName: document.querySelector("#projectName").value,
+    projectDescription: document.querySelector("#projectDescription").value,
   };
   console.log("new project", addProject);
 
