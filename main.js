@@ -42,10 +42,11 @@ const cardsOnDom = (projects) => {
     domString += `<div class="card w-50">
     <div class="card-body" style="padding-bottom: 5%">
       <h5 class="card-title">${project.projectName}</h5>
+      <p>Project ID- ${project.id}</p>
       <p class="card-text">Project Description-
       ${project.projectDescription}
       </p>
-      <a href="#" class="link-danger">Delete</a>
+      <button type="button" class="btn btn-danger">Delete</button>
     </div>
   </div>
 `;
@@ -87,3 +88,28 @@ const createProject = (event) => {
 //event listener for create button
 const newProject = document.querySelector("#submit-form");
 newProject.addEventListener("click", createProject);
+
+//delete project card
+
+const deleteCard = document.querySelector("#projects");
+
+//add event listener
+
+deleteCard.addEventListener("click", (e) => {
+  if (e.target.id.includes("delete")) {
+    console.log(e.target.id);
+    console.log("Hello World");
+
+    const [, id] = e.target.split("--");
+
+    const index = projects.findIndex((e) => e.id === Number(id));
+    projects.splice(index, 1);
+  }
+  cardsOnDom(projects);
+});
+
+//const startApp = () => {
+//  cardsOnDom(projects);
+//};
+
+//startApp();
